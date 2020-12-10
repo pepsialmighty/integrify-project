@@ -24,26 +24,8 @@ const UserInfo = () => {
     history.push('/');
   };
 
-  // After 5 sec and still can not get the data, refetch the data
+  // If the application can not get the data, refetch the data
   useEffect(() => {
-    // setTimeout(() => {
-    //   if (!userData.length) {
-    //     // history.push('/');
-    //     // alert('Please try again!');
-    //     const refetch = async () => {
-    //       const response = await axios
-    //         .get(`https://jsonplaceholder.typicode.com/users/${id}`)
-    //         .then((res) => res.data)
-    //         .catch((err) => console.log(err));
-
-    //       setData(response);
-    //     };
-
-    //     refetch();
-    //   } else {
-    //     return;
-    //   }
-    // }, 5000);
     if (!userData.length) {
       // history.push('/');
       // alert('Please try again!');

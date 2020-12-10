@@ -89,7 +89,7 @@ const MyCard = (props) => {
         </div>
         <div className='card card__website'>
           <Typography className={classes.pos1} color='textSecondary'>
-            <a href='#'>{`http://${user.website}`}</a>
+            <a href={`http://${user.website}`}>{`http://${user.website}`}</a>
           </Typography>
         </div>
       </CardContent>
