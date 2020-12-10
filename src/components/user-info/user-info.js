@@ -24,24 +24,40 @@ const UserInfo = () => {
 
   // After 5 sec and still can not get the data, refetch the data
   useEffect(() => {
-    setTimeout(() => {
-      if (!userData.length) {
-        // history.push('/');
-        // alert('Please try again!');
-        const refetch = async () => {
-          const response = await axios
-            .get(`https://jsonplaceholder.typicode.com/users/${id}`)
-            .then((res) => res.data)
-            .catch((err) => console.log(err));
+    // setTimeout(() => {
+    //   if (!userData.length) {
+    //     // history.push('/');
+    //     // alert('Please try again!');
+    //     const refetch = async () => {
+    //       const response = await axios
+    //         .get(`https://jsonplaceholder.typicode.com/users/${id}`)
+    //         .then((res) => res.data)
+    //         .catch((err) => console.log(err));
 
-          setData(response);
-        };
+    //       setData(response);
+    //     };
 
-        refetch();
-      } else {
-        return;
-      }
-    }, 5000);
+    //     refetch();
+    //   } else {
+    //     return;
+    //   }
+    // }, 5000);
+    if (!userData.length) {
+      // history.push('/');
+      // alert('Please try again!');
+      const refetch = async () => {
+        const response = await axios
+          .get(`https://jsonplaceholder.typicode.com/users/${id}`)
+          .then((res) => res.data)
+          .catch((err) => console.log(err));
+
+        setData(response);
+      };
+
+      refetch();
+    } else {
+      return;
+    }
   }, [data]);
 
   return (
