@@ -16,8 +16,10 @@ const UserInfo = () => {
 
   useEffect(() => {
     setData(userData[0]);
-  }, []);
+    console.log('hohoo');
+  }, [userData]);
 
+  console.log(data);
   const handleClick = () => {
     history.push('/');
   };
@@ -52,13 +54,14 @@ const UserInfo = () => {
           .catch((err) => console.log(err));
 
         setData(response);
+        console.log('hoh');
       };
 
       refetch();
     } else {
       return;
     }
-  }, [data]);
+  }, []);
 
   return (
     <div className='userInfo__container'>
@@ -66,7 +69,16 @@ const UserInfo = () => {
         <div className='userInfo__title'>
           <h1>User Detail Page</h1>
         </div>
-        {data ? (
+        {!data ? (
+          <div>
+            <Skeleton variant='text' width={150} />
+            <Skeleton variant='rect' height={100} />
+            <Skeleton variant='text' width={150} />
+            <Skeleton variant='rect' height={100} />
+            <Skeleton variant='text' width={150} />
+            <Skeleton variant='rect' height={100} />
+          </div>
+        ) : (
           <div className='userInfo__content'>
             <div className='userInfo__info'>
               <h3>Name: {data.name}</h3>
@@ -75,13 +87,19 @@ const UserInfo = () => {
               <h3>Username: {data.username}</h3>
             </div>
             <div className='userInfo__info'>
-              <h3>Email: {data.email}</h3>
+              <h3>
+                Email: <a href={`mailto:${data.email}`}>{data.email}</a>
+              </h3>
             </div>
             <div className='userInfo__info'>
-              <h3>Phone: {data.phone}</h3>
+              <h3>
+                Phone: <a href={`tel:${data.phone}`}>{data.phone}</a>
+              </h3>
             </div>
             <div className='userInfo__info'>
-              <h3>Website: {data.website}</h3>
+              <h3>
+                Website: <a href={data.website}>{data.website}</a>
+              </h3>
             </div>
             <div className='userInfo__info'>
               <h3>
@@ -106,15 +124,6 @@ const UserInfo = () => {
                 </ul>
               </h3>
             </div>
-          </div>
-        ) : (
-          <div>
-            <Skeleton variant='text' width={150} />
-            <Skeleton variant='rect' height={100} />
-            <Skeleton variant='text' width={150} />
-            <Skeleton variant='rect' height={100} />
-            <Skeleton variant='text' width={150} />
-            <Skeleton variant='rect' height={100} />
           </div>
         )}
       </div>
