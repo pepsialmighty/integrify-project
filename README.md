@@ -31,8 +31,8 @@ You will also see any lint errors in the console.
 The application will fetch the data from a server, here is the link of the API:<br />
 https://jsonplaceholder.typicode.com/users
 
-**The hompage will have multiples of card, you can click into that and it will redirect you to the user's information page.
-**When the application being fetched, but fails to fetch the data or display it on the screen, user will be redirect back to the homepage.
+**The hompage will have multiples of card, you can click into that and it will redirect you to the user's information page.**
+**When the application being fetched, but fails to fetch the data or display it on the screen, user will be redirect back to the homepage.**
 
 ## Contributing to this APPLICATION
 If you have suggestions for improving the checklist, please [open an issue or
