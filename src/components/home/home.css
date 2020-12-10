@@ -1,15 +1,28 @@
 .home__container {
-  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.home__cards {
+  padding: 50px 0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-row-gap: 20px;
+  width: 90%;
+}
+
+.home__footer p {
+  font-style: italic;
 }
 
 @media (max-width: 600px) {
-  .home__container {
-    padding: 25px;
+  .home__cards {
+    padding: 25px 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    width: 90%;
     grid-row-gap: 20px;
   }
 }

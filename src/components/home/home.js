@@ -20,7 +20,13 @@ const Home = () => {
 
   return (
     <div className='home__container'>
-      {userInfo && userInfo.map((info) => <MyCard key={info.id} data={info} />)}
+      <div className='home__cards'>
+        {userInfo &&
+          userInfo.map((info) => <MyCard key={info.id} data={info} />)}
+      </div>
+      <div className='home__footer'>
+        <p>© Copyright 2020 Nguyen Nguyen. All Rights Reserved.</p>
+      </div>
     </div>
   );
 };
