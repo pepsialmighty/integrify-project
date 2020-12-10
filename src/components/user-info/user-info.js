@@ -10,7 +10,7 @@ const UserInfo = () => {
   let { id } = useParams();
   let history = useHistory();
 
-  const [{ userData }, dispatch] = useStateValue();
+  const [{ userData }] = useStateValue();
   const [data, setData] = useState(null);
 
   useEffect(() => {
@@ -21,14 +21,12 @@ const UserInfo = () => {
     history.push('/');
   };
 
-  console.log(userData);
-
   // After 10 sec and still can not get the data, push the use back to home
   useEffect(() => {
-    console.log('lala');
     setTimeout(() => {
       if (!userData.length) {
         history.push('/');
+        alert('Please try again!');
       } else {
         return;
       }
