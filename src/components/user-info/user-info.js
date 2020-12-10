@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import Skeleton from '@material-ui/lab/Skeleton';
+import axios from 'axios';
 
 import './user-info.css';
 import { useStateValue } from '../../StateProvider';
@@ -21,16 +22,26 @@ const UserInfo = () => {
     history.push('/');
   };
 
-  // After 10 sec and still can not get the data, push the use back to home
+  // After 5 sec and still can not get the data, refetch the data
   useEffect(() => {
     setTimeout(() => {
       if (!userData.length) {
-        history.push('/');
-        alert('Please try again!');
+        // history.push('/');
+        // alert('Please try again!');
+        const refetch = async () => {
+          const response = await axios
+            .get(`https://jsonplaceholder.typicode.com/users/${id}`)
+            .then((res) => res.data)
+            .catch((err) => console.log(err));
+
+          setData(response);
+        };
+
+        refetch();
       } else {
         return;
       }
-    }, 10000);
+    }, 5000);
   }, [data]);
 
   return (
