@@ -14,11 +14,9 @@ $ node --version
 v12.16.1
 ```
 
-## You can run it both by yarn or npm.
+## You can run it by yarn.
 
 ### `yarn start`
-
-### `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
