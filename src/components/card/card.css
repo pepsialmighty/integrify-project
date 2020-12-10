@@ -1,0 +1,27 @@
+.card {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card__avatar {
+  height: 100px;
+}
+
+.card__name {
+  font-size: 30px;
+}
+
+.card__button {
+  background-color: #673ab7;
+}
+
+@media (max-width: 600px) {
+  .home__container {
+    padding: 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 20px;
+  }
+}
