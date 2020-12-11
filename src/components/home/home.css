@@ -3,14 +3,19 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 0 10px;
+}
+
+.home__title {
+  margin-top: 10px;
 }
 
 .home__cards {
-  padding: 50px 0;
+  padding: 10px 0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-row-gap: 20px;
-  width: 90%;
+  width: 100%;
 }
 
 .home__footer p {
